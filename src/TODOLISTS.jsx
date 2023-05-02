@@ -5,7 +5,9 @@ const TODOLISTS = (props) => {
   return (
     <>
       <div className="taskalign">
-        <li> {props.text} </li>
+        <li>
+          {props.id + 1} {props.text}{" "}
+        </li>
         <i
           className="bi bi-x-lg"
           aria-hidden="true"

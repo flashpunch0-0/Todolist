@@ -61,10 +61,10 @@ const App = () => {
 
   return (
     <>
-      <div className="main_div">
-        <div className="center_div">
+      <div className="main_div bg-green-400">
+        <div className="center_div bg-green">
           <br />
-          <h1>Learning TODO</h1>
+          <h1 className="text-black">Learning TODO</h1>
           <br />
           <div className="inputandsubmit">
             <input
