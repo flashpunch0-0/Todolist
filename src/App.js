@@ -61,38 +61,101 @@ const App = () => {
 
   return (
     <>
-      <div className="main_div bg-green-400">
-        <div className="center_div bg-green">
-          <br />
-          <h1 className="text-black">Learning TODO</h1>
-          <br />
-          <div className="inputandsubmit">
-            <input
-              type="text"
-              placeholder="add a task"
-              value={inputList}
-              onChange={itemEvent}
-            />
-            &nbsp;
-            <button onClick={listofItems}> + </button>
-          </div>
+      <body
+        className=" 
+       text-white font-serif bg-gray-900  w-screen h-screen  "
+      >
+        {/* content wrapper */}
+        <div className="flex items-center justify-center h-screen  ">
+          <div className=" md:shrink-0 w-96 text-center  ">
+            <div className=" font-extralight tracking-wider uppercase ">
+              <h1 className="p-8 flex items-center  justify-start    bg-indigo-400 ">
+                <svg
+                  class="h-8 w-8 text-indigo-700 stroke-current "
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
+                  />
+                </svg>
+                <p className=" ml-8"> Learning TODO</p>
+              </h1>
+            </div>
+            {/* <div className="inputandsubmit">
+              <input
+                type="text"
+                placeholder="add a task"
+                value={inputList}
+                onChange={itemEvent}
+              />
 
-          <ol>
-            {/* <li>{inputList}</li> */}
-            {/* mapping function */}
-            {Items.map((allitemsvalue, index) => {
-              return (
-                <TODOLISTS
-                  key={index}
-                  id={index}
-                  text={allitemsvalue}
-                  onSelect={deleteItems}
+              <button className="ml-2" onClick={listofItems}>
+                {" "}
+                +{" "}
+              </button>
+            </div> */}
+            {/* for ordered list */}
+            <div className="mt-11   overflow-auto text-white rounded-lg shadow-lg mb-11 h-96 bg-gray-800 ">
+              <div className="block justify-around items-center">
+                {/* <li>{inputList}</li> */}
+                {/* mapping function */}
+                {Items.map((allitemsvalue, index) => {
+                  return (
+                    <TODOLISTS
+                      key={index}
+                      id={index}
+                      text={allitemsvalue}
+                      onSelect={deleteItems}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* for input */}
+            <div className=" flex w-full bg-indigo-400  items-center justify-center ">
+              <div className=" p-4 justify-center items-center">
+                <input
+                  className="p-4 text-white w-64 border-2 border-white rounded-md bg-indigo-400  "
+                  type="text"
+                  placeholder="add a task"
+                  value={inputList}
+                  onChange={itemEvent}
                 />
-              );
-            })}
-          </ol>
+
+                <button
+                  className="ml-2    align-middle  "
+                  onClick={listofItems}
+                >
+                  <svg
+                    className="w-10 h-10"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+
+        {/* <div className=" w-2/12"></div> */}
+      </body>
     </>
   );
 };
