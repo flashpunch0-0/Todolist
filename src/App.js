@@ -66,10 +66,10 @@ const App = () => {
        text-white font-serif bg-gray-900  w-screen h-screen  "
       >
         {/* content wrapper */}
-        <div className="flex items-center justify-center   ">
+        <div className="flex items-center justify-center h-screen  ">
           <div className="  md:w-96   scale-90 md:scale-100 ">
             <div className=" font-extralight tracking-wider uppercase  md:w-full">
-              <h1 className="p-2 md:p-8 mt-5 md:mt-11 flex items-center  justify-start    bg-indigo-400 ">
+              <h1 className=" p-5 h-12 md:h-16 mt-4 md:mt-8 flex items-center  justify-start    bg-indigo-400 ">
                 <svg
                   class="h-8 w-8 text-indigo-700 stroke-current "
                   xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@ const App = () => {
               </button>
             </div> */}
             {/* for ordered list */}
-            <div className="mt-4 md:mt-10 overflow-auto text-white rounded-lg shadow-lg mb-4 md:mb-11 h-96 bg-gray-800 ">
+            <div className="mt-4 md:mt-10 overflow-auto text-white rounded-lg shadow-lg mb-4 md:mb-6 h-96 bg-gray-800 ">
               {/* <li>{inputList}</li> */}
               {/* mapping function */}
 
@@ -119,9 +119,9 @@ const App = () => {
 
             {/* for input */}
             <div className=" flex w-full bg-indigo-400  items-center justify-center ">
-              <div className=" p-2 md:p-4 justify-center items-center">
+              <div className=" p-4 h-12 md:h-16">
                 <input
-                  className="p-2 md:p-4 text-white md:w-64  w-24 border-2 border-white rounded-md bg-indigo-400  "
+                  className=" text-center  text-white md:w-64  w-24 border-2 border-white rounded-md bg-indigo-400  "
                   type="text"
                   placeholder="add a task"
                   value={inputList}
