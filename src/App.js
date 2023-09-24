@@ -26,11 +26,15 @@ const App = () => {
   };
 
   const listofItems = (e) => {
-    setItemss((olditems) => [...olditems, inputList]);
-    const alreadySavedItems = getLocalItems();
-    const newArray = [...alreadySavedItems, inputList];
-    localStorage.setItem("dhokla", JSON.stringify(newArray));
-    clearinputfield();
+    if (!inputList) {
+      alert("PLEASE FILL THE REQUIRED TASK");
+    } else {
+      setItemss((olditems) => [...olditems, inputList]);
+      const alreadySavedItems = getLocalItems();
+      const newArray = [...alreadySavedItems, inputList];
+      localStorage.setItem("dhokla", JSON.stringify(newArray));
+      clearinputfield();
+    }
   };
   const clearinputfield = () => {
     // 👇️ clear input value
