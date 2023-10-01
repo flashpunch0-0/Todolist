@@ -26,6 +26,7 @@ const App = () => {
   };
 
   const listofItems = (e) => {
+    e.preventDefault();
     if (!inputList) {
       alert("PLEASE FILL THE REQUIRED TASK");
     } else {
@@ -40,16 +41,6 @@ const App = () => {
     // 👇️ clear input value
     setInputLit("");
   };
-
-  // const deleteItems = (id) => {
-  //   console.log("deleted");
-  //   setItemss((olditems) => {
-  //     return olditems.filter((arrElem, index) => {
-  //       return index !== id;
-  //     });
-  //   });
-  //   // localStorage.setItem("dhokla", JSON.stringify());
-  // };
   // // local storage and you can only pass in string format
 
   const deleteItems = (id) => {
@@ -91,19 +82,7 @@ const App = () => {
                 <p className=" ml-8"> Learning TODO</p>
               </h1>
             </div>
-            {/* <div className="inputandsubmit">
-              <input
-                type="text"
-                placeholder="add a task"
-                value={inputList}
-                onChange={itemEvent}
-              />
 
-              <button className="ml-2" onClick={listofItems}>
-                {" "}
-                +{" "}
-              </button>
-            </div> */}
             {/* for ordered list */}
             <div className="mt-4 md:mt-10 overflow-auto text-white rounded-lg shadow-lg mb-4 md:mb-6 h-96 bg-gray-800 ">
               {/* <li>{inputList}</li> */}
@@ -124,35 +103,58 @@ const App = () => {
             {/* for input */}
             <div className=" flex w-full bg-indigo-400  items-center justify-center ">
               <div className=" p-4 h-12 md:h-16">
-                <input
-                  className=" text-center  text-white md:w-64  w-24 border-2 border-white rounded-md bg-indigo-400  "
-                  type="text"
-                  placeholder="add a task"
-                  value={inputList}
-                  onChange={itemEvent}
-                />
+                <form onSubmit={listofItems}>
+                  <input
+                    className=" text-center  text-white md:w-64  w-24 border-2 border-white rounded-md bg-indigo-400  "
+                    type="text"
+                    placeholder="add a task"
+                    value={inputList}
+                    onChange={itemEvent}
+                  />
 
-                <button
-                  className="ml-2    align-middle  "
-                  onClick={listofItems}
-                >
-                  <svg
-                    className="w-10 h-10"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6"
+                  <button
+                    type="submit"
+                    className="ml-2    align-middle  "
+                    // onClick={listofItems}
+                    // onSubmit={listofItems}
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </button>
+                    <svg
+                      className="w-10 h-10"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </button>
+                </form>
               </div>
+
+              {/* <form
+                className="flex flex-0.6  bg-blacksecondary border  border-bordercolor rounded-full "
+                onSubmit={handleSubmit}
+              >
+                <input
+                  type="text"
+                  className="outline-none text-white ml-2 pr-5 pl-5 md:pl-0   w-44 md:w-64 lg:w-[500px]  border-none font-medium bg-transparent"
+                  placeholder="Search"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                />
+                <button
+                  type="submit"
+                  className="bg-bordercolor  w-[40px] md:w-[60px] h-6 md:h-10 flex items-center justify-center  rounded-r-3xl  "
+                >
+                  <AiOutlineSearch size={24} />
+                </button>
+              </form> */}
             </div>
           </div>
         </div>
