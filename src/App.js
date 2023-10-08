@@ -79,7 +79,7 @@ const App = () => {
                     d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
                   />
                 </svg>
-                <p className=" ml-8">TASK LIST - KRATIK</p>
+                <p className=" ml-8">TASK LIST -KRATIK</p>
               </h1>
             </div>
 
@@ -105,9 +105,9 @@ const App = () => {
               <div className=" p-4 h-12 md:h-16">
                 <form onSubmit={listofItems}>
                   <input
-                    className=" text-center  text-white md:w-64  w-24 border-2 border-white rounded-md bg-indigo-400  "
+                    className=" text-center  placeholder-white placeholder-opacity-60 text-white md:w-64  w-24 border-2 border-white rounded-md bg-indigo-400  "
                     type="text"
-                    placeholder="add a task"
+                    placeholder="Create A Task To Complete"
                     value={inputList}
                     onChange={itemEvent}
                   />
